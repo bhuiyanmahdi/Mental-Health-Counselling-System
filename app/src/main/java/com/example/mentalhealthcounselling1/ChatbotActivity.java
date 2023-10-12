@@ -59,12 +59,12 @@ public class ChatbotActivity extends AppCompatActivity {
     private void getResponse(String message){
         chatsModalArrayList.add(new ChatsModal(message, USER_KEY));
         chatRVAdapter.notifyDataSetChanged();
-        String url="http://127.0.0.1:5000/chat/"+message;
-        String BASE_URL = "http://127.0.0.1:5000/chat/";
+        String url="http://192.168.0.7:5000/chat/"+message;
+        String BASE_URL = "http://192.168.0.7:5000";
         Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
-       // Call<MsgModal> call = retrofitAPI.getMessage(url);
         Call<MsgModal> call = retrofitAPI.getMessage(url);
+       // Call<MsgModal> call = retrofitAPI.getChatBotReply(url);
         call.enqueue(new Callback<MsgModal>() {
             @Override
             public void onResponse(Call<MsgModal> call, Response<MsgModal> response) {
@@ -80,7 +80,7 @@ public class ChatbotActivity extends AppCompatActivity {
             public void onFailure(Call<MsgModal> call, Throwable t) {
                 chatsModalArrayList.add(new ChatsModal("Please revert your question", BOT_KEY));
                 chatRVAdapter.notifyDataSetChanged();
-
+                System.out.println("Exception: " + t.toString());
             }
         });
     }

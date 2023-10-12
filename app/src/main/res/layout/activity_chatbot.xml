@@ -28,7 +28,7 @@
             android:layout_margin="3dp"
             android:layout_centerInParent="true"
             android:layout_toLeftOf="@id/idFABSend"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:singleLine="true" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -39,7 +39,7 @@
             android:id="@+id/idFABSend"
             android:layout_margin="4dp"
             app:fabCustomSize="45dp"
-            android:tint="@color/white"
+            android:tint="@color/black"
             android:backgroundTint="@color/headings2"
             android:layout_alignParentRight="true" />
 
