@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,7 @@ public class ChatRVAdapter extends RecyclerView.Adapter{
         this.context = context;
     }
 
+    String videoUrl = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/Xq2LdtiOkBU?si=-4_0uDlbHaCpsjG5\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>"; // Replace with the actual video URL
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -47,6 +50,7 @@ public class ChatRVAdapter extends RecyclerView.Adapter{
 
             case "bot":
                 ((BotViewHolder)holder).botMsgTV.setText(chatsModal.getMessage());
+                ((BotViewHolder)holder).webView.loadData(videoUrl, "text/html", "utf-8");
                 break;
         }
     }
@@ -82,10 +86,13 @@ public class ChatRVAdapter extends RecyclerView.Adapter{
 
     public static class BotViewHolder extends RecyclerView.ViewHolder{
         TextView botMsgTV;
-
+        WebView webView;
         public BotViewHolder(@NonNull View itemView) {
             super(itemView);
             botMsgTV = itemView.findViewById(R.id.idTVBot);
+            webView = itemView.findViewById(R.id.webView);
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.setWebChromeClient(new WebChromeClient());
         }
     }
 }

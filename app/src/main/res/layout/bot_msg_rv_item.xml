@@ -10,25 +10,37 @@
     app:cardCornerRadius="8dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_chatbot"
-            android:layout_margin="10dp"
-            />
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/idTVBot"
-            android:text="Bot message"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:padding="3dp"
-            android:layout_margin="5dp"
-            />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_chatbot" />
+
+            <TextView
+                android:id="@+id/idTVBot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:padding="3dp"
+                android:text="Bot message"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
+
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
