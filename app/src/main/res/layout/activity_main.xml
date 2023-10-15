@@ -7,14 +7,15 @@
     tools:context=".MainActivity">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <ScrollView
         android:layout_width="402dp"
-        android:layout_height="541dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_height="600dp"
+
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,5 +62,39 @@
                 app:cardUseCompatPadding="true" />
         </LinearLayout>
     </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:id="@+id/idRLMsg">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chat with our bot"
+            android:layout_margin="3dp"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/idChatbot"
+            android:textColor="#4E9F3D"
+            android:singleLine="true" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_chat"
+            android:id="@+id/idChatbot"
+            android:layout_margin="4dp"
+            app:fabCustomSize="45dp"
+            android:tint="#1E5128"
+            android:backgroundTint="@color/white"
+            android:layout_alignParentRight="true" />
+
+
+
+
+    </RelativeLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

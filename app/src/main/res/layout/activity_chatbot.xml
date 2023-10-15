@@ -35,11 +35,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android.src="@drawable/ic_send"
+            android:src="@drawable/ic_send"
             android:id="@+id/idFABSend"
             android:layout_margin="4dp"
             app:fabCustomSize="45dp"
-            android:tint="@color/black"
+            android:tint="@color/white"
             android:backgroundTint="@color/headings2"
             android:layout_alignParentRight="true" />
 
