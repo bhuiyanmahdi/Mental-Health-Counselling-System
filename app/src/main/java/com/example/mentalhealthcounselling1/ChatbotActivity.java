@@ -57,10 +57,10 @@ public class ChatbotActivity extends AppCompatActivity {
         });
     }
     private void getResponse(String message){
-        chatsModalArrayList.add(new ChatsModal(message, USER_KEY));
+        chatsModalArrayList.add(new ChatsModal(message, "no video found", USER_KEY));
         chatRVAdapter.notifyDataSetChanged();
-        String url="http://192.168.0.7:5000/chat/"+message;
-        String BASE_URL = "http://192.168.0.7:5000";
+        String url="http://192.168.65.249:5000/chat/"+message;
+        String BASE_URL = "http://192.168.65.249:5000";
         Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
         Call<MsgModal> call = retrofitAPI.getMessage(url);
@@ -71,14 +71,14 @@ public class ChatbotActivity extends AppCompatActivity {
                 if(response.isSuccessful())
                 {
                     MsgModal modal = response.body();
-                    chatsModalArrayList.add(new ChatsModal(modal.getChatBotReply(), BOT_KEY));
+                    chatsModalArrayList.add(new ChatsModal(modal.getChatBotReply(), modal.getVideoUrl(), BOT_KEY));
                     chatRVAdapter.notifyDataSetChanged();
                 }
             }
 
             @Override
             public void onFailure(Call<MsgModal> call, Throwable t) {
-                chatsModalArrayList.add(new ChatsModal("Please revert your question", BOT_KEY));
+                chatsModalArrayList.add(new ChatsModal("Please revert your question", "no video found", BOT_KEY));
                 chatRVAdapter.notifyDataSetChanged();
                 System.out.println("Exception: " + t.toString());
             }

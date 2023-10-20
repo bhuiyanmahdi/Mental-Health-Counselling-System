@@ -12,8 +12,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
     <ScrollView
-        android:layout_width="402dp"
-        android:layout_height="600dp"
+        android:layout_width="350dp"
+        android:layout_height="550dp"
 
         >
 

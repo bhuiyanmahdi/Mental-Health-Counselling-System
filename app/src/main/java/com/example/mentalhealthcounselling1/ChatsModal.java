@@ -4,10 +4,20 @@ public class ChatsModal {
 
     private String message;
     private String sender;
+    private String video;
 
-    public ChatsModal(String message, String sender) {
+    public ChatsModal(String message, String video, String sender) {
         this.message = message;
         this.sender = sender;
+        this.video = video;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
     }
 
     public String getMessage() {

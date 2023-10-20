@@ -24,7 +24,6 @@ public class ChatRVAdapter extends RecyclerView.Adapter{
         this.context = context;
     }
 
-    String videoUrl = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/Xq2LdtiOkBU?si=-4_0uDlbHaCpsjG5\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>"; // Replace with the actual video URL
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -50,7 +49,7 @@ public class ChatRVAdapter extends RecyclerView.Adapter{
 
             case "bot":
                 ((BotViewHolder)holder).botMsgTV.setText(chatsModal.getMessage());
-                ((BotViewHolder)holder).webView.loadData(videoUrl, "text/html", "utf-8");
+                ((BotViewHolder)holder).webView.loadData(chatsModal.getVideo(), "text/html", "utf-8");
                 break;
         }
     }
