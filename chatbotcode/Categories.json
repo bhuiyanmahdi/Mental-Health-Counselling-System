@@ -1,33 +1,40 @@
 {
   "categories": [
-      {
-          "tag": "greeting",
-          "patterns": [
-              "Hi",
-              "Hey",
-              "How are you",
-              "How are you doing",
-              "Is anyone there?",
-              "What's up?",
-              "Hello",
-              "Good day",
-              "What's popping"
-          ],
-          "responses": [
-              "Hey! Welcome to Laura.",
-              "Hi there, I'm doing well! My name's Laura, what can I do for you?",
-              "Hey there, my name's Aura, your mental health friend. How can I help you today?"
-          ]
-      },
-      {
-          "tag": "goodbye",
-          "patterns": ["Bye", "See you later!", "Goodbye!", "Thank you"],
-          "responses": [
-              "See you later! Take care!",
-              "Have a lovely day! Take care and stay safe!",
-              "Take care of yourself! I'm always here to support you! Feel free to come back at any time!"
-          ]
-      },
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "How are you doing",
+        "Is anyone there?",
+        "What's up?",
+        "Hello",
+        "Good day",
+        "What's popping"
+      ],
+      "responses": [
+        "Hey! Welcome to Laura.",
+        "Hi there, I'm doing well! My name's Laura, what can I do for you?",
+        "Hey there, my name's Aura, your mental health friend. How can I help you today?"
+      ],
+      "url": [
+        "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HFyt2KF84LU?si=HTujPVGqS-S0hSuQ\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>",
+        "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/2Hpz1pWbQlE?si=c2PgMJz1P3NnZdvw\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [ "Bye", "See you later!", "Goodbye!", "Thank you" ],
+      "responses": [
+        "See you later! Take care!",
+        "Have a lovely day! Take care and stay safe!",
+        "Take care of yourself! I'm always here to support you! Feel free to come back at any time!"
+      ],
+      "url": [
+        "null"
+      ]
+    },
       {
           "tag": "thanks",
           "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
