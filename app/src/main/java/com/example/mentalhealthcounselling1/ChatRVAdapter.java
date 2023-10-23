@@ -1,12 +1,14 @@
 package com.example.mentalhealthcounselling1;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +37,10 @@ public class ChatRVAdapter extends RecyclerView.Adapter{
             case 1:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bot_msg_rv_item,parent,false);
                 return new BotViewHolder(view);
+            // for only message
+            /*case 2:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bot_msg_rv_item_only_message,parent,false);
+                return new BotViewHolder_only_message(view);*/
         }
         return null;
     }
@@ -46,11 +52,27 @@ public class ChatRVAdapter extends RecyclerView.Adapter{
             case "user":
                 ((UserViewHolder)holder).userTV.setText(chatsModal.getMessage());
                 break;
-
+            // below portion has been modified
             case "bot":
-                ((BotViewHolder)holder).botMsgTV.setText(chatsModal.getMessage());
-                ((BotViewHolder)holder).webView.loadData(chatsModal.getVideo(), "text/html", "utf-8");
+                if(chatsModal.getVideo().equals("null")){
+
+                    ((BotViewHolder)holder).botMsgTV.setText(chatsModal.getMessage());
+                    ((BotViewHolder)holder).webView.setVisibility(View.GONE);
+                    }
+                else{
+                    ((BotViewHolder)holder).botMsgTV.setText(chatsModal.getMessage());
+                    ((BotViewHolder)holder).webView.loadData(chatsModal.getVideo(), "text/html", "utf-8");
+                    //((BotViewHolder)holder).webView.setVisibility(View.GONE);
+                    //Toast.makeText(context,chatsModal.getMessage(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(context,chatsModal.getVideo(), Toast.LENGTH_SHORT).show();
+
+                }
+
+                //((BotViewHolder)holder).botMsgTV.setText(chatsModal.getMessage());
+                //((BotViewHolder)holder).webView.loadData(chatsModal.getVideo(), "text/html", "utf-8");
+
                 break;
+                // till this
         }
     }
 
@@ -92,6 +114,16 @@ public class ChatRVAdapter extends RecyclerView.Adapter{
             webView = itemView.findViewById(R.id.webView);
             webView.getSettings().setJavaScriptEnabled(true);
             webView.setWebChromeClient(new WebChromeClient());
+
         }
     }
+
+    //extra part for without video , only message
+    /*public static class BotViewHolder_only_message extends RecyclerView.ViewHolder{
+        TextView botMsgTV;
+        public BotViewHolder_only_message(@NonNull View itemView) {
+            super(itemView);
+            botMsgTV = itemView.findViewById(R.id.idTVBot_only_message);
+        }
+    }*/
 }
