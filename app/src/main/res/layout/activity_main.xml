@@ -4,97 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
+    <TextView
+        android:id="@+id/idwelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="640dp"
+        app:layout_constraintBottom_toTopOf="@id/idRLMsg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Welcome!"
+        android:textAlignment="center"
+        android:textSize="50sp"/>
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainRV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-    <ScrollView
-        android:layout_width="350dp"
-        android:layout_height="550dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/idRLMsg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/idwelcome" />
 
-        >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="235dp"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginEnd="16dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp"
-                app:cardMaxElevation="12dp"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="235dp"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginEnd="16dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp"
-                app:cardMaxElevation="12dp"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="235dp"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginEnd="16dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp"
-                app:cardMaxElevation="12dp"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true" />
-        </LinearLayout>
-    </ScrollView>
     <RelativeLayout
+        android:id="@+id/idRLMsg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:id="@+id/idRLMsg">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chat with our bot"
-            android:layout_margin="3dp"
-            android:textSize="20dp"
-            android:textStyle="bold|italic"
             android:layout_centerInParent="true"
+            android:layout_margin="3dp"
             android:layout_toLeftOf="@id/idChatbot"
+            android:singleLine="true"
+            android:text="Chat with our bot"
             android:textColor="#4E9F3D"
-            android:singleLine="true" />
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/idChatbot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_chat"
-            android:id="@+id/idChatbot"
-            android:layout_margin="4dp"
-            app:fabCustomSize="45dp"
-            android:tint="#1E5128"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
             android:backgroundTint="@color/white"
-            android:layout_alignParentRight="true" />
-
-
+            android:src="@drawable/ic_chat"
+            android:tint="@color/white"
+            app:fabCustomSize="45dp" />
 
 
     </RelativeLayout>
-    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
