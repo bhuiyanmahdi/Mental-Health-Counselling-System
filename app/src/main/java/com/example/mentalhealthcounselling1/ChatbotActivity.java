@@ -60,8 +60,8 @@ public class ChatbotActivity extends AppCompatActivity {
     private void getResponse(String message){
         chatsModalArrayList.add(new ChatsModal(message, "no video found", USER_KEY));
         chatRVAdapter.notifyDataSetChanged();
-        String url="http://192.168.0.7:5000/chat/"+message;
-        String BASE_URL = "http://192.168.0.7:5000";
+        String url="http://192.180.50.106:5000/chat/"+message;
+        String BASE_URL = "http://192.180.50.106:5000";
         Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
         Call<MsgModal> call = retrofitAPI.getMessage(url);
