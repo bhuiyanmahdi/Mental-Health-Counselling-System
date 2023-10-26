@@ -18,7 +18,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:text="Welcome!"
         android:textAlignment="center"
-        android:textSize="50sp"/>
+        android:textSize="50sp"
+        android:textColor="@color/darkblue"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainRV"
@@ -48,7 +49,7 @@
             android:layout_toLeftOf="@id/idChatbot"
             android:singleLine="true"
             android:text="Chat with our bot"
-            android:textColor="#4E9F3D"
+            android:textColor="@color/darkblue"
             android:textSize="20dp"
             android:textStyle="bold|italic" />
 

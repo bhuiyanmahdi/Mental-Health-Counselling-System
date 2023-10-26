@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatbotActivity">
+    tools:context=".ChatbotActivity"
+    android:background="@drawable/background3">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
@@ -22,13 +23,14 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter message"
+            android:hint="Type a message"
             android:textColorHint="@color/white"
             android:id="@+id/idEdtMessage"
             android:layout_margin="3dp"
             android:layout_centerInParent="true"
             android:layout_toLeftOf="@id/idFABSend"
             android:textColor="@color/black"
+            android:textSize="20dp"
             android:singleLine="true" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -40,7 +42,7 @@
             android:layout_margin="4dp"
             app:fabCustomSize="45dp"
             android:tint="@color/white"
-            android:backgroundTint="@color/headings2"
+            android:backgroundTint="@color/darkblue"
             android:layout_alignParentRight="true" />
 
 

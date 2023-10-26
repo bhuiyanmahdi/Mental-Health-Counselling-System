@@ -32,10 +32,10 @@ public class ChatRVAdapter extends RecyclerView.Adapter{
         View view;
         switch (viewType){
             case 0:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_msg_rv_item,parent,false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_msg_rv_item2,parent,false);
                 return new UserViewHolder(view);
             case 1:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bot_msg_rv_item,parent,false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bot_msg_rv_item2,parent,false);
                 return new BotViewHolder(view);
             // for only message
             /*case 2:

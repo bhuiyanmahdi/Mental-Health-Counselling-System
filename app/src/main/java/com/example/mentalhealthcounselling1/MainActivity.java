@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
         mainRV_items = new ArrayList<MainRV_item>();
-        mainRV_items.add(new MainRV_item(R.drawable.anxiety, "Anxiety"));
+        mainRV_items.add(new MainRV_item(R.drawable.depression2, "Anxiety"));
         mainRV_items.add(new MainRV_item(R.drawable.depression, "Depression"));
-        mainRV_items.add(new MainRV_item(R.drawable.panikattack, "Panic Attack"));
+        mainRV_items.add(new MainRV_item(R.drawable.anxiety, "Panic Attack"));
         mainRV_items.add(new MainRV_item(R.drawable.meditation, "Meditation"));
         mainRV_items.add(new MainRV_item(R.drawable.selfcare, "Selfcare"));
         MainRV_adapter mainRV_adapter = new MainRV_adapter(mainRV_items, this);
