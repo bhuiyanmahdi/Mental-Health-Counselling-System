@@ -69,8 +69,9 @@ def getResponse (intentsList, intentsJson):
     for i in listOfIntents:
         if i['tag'] == tag:
             result = random.choice (i['responses'])
+		url = random.choice (i['url'])
             break
-    return result
+    return result,url;
 
 
 def chatWithBot():
@@ -92,7 +93,9 @@ def chatWithBot():
 @app.route('/chat/<msg>', methods=['GET','POST'])
 def chatWithBot(msg):
 	#chatInput = request.form['chatInput']
-	return jsonify(chatBotReply=predictClass(msg))
+	#return jsonify(chatBotReply=predictClass(msg))
+	cbReply, url = predictClass(msg)
+    	return jsonify(chatBotReply= cbReply, videoUrl= url)
 	
 if __name__ == '__main__':
 	app.run(host="192.168.0.7", debug=True)
